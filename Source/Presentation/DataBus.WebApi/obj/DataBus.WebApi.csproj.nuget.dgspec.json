@@ -1,0 +1,528 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Presentation/DataBus.WebApi/DataBus.WebApi.csproj": {}
+  },
+  "projects": {
+    "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj",
+        "projectName": "DataBus.Application",
+        "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj",
+        "packagesPath": "/Users/felipealpizarramirez/.nuget/packages/",
+        "outputPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/felipealpizarramirez/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj": {
+                "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.9.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj",
+        "projectName": "DataBus.Domain",
+        "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj",
+        "packagesPath": "/Users/felipealpizarramirez/.nuget/packages/",
+        "outputPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/felipealpizarramirez/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/DataBus.Infrastructure.Persistance.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/DataBus.Infrastructure.Persistance.csproj",
+        "projectName": "DataBus.Infrastructure.Persistance",
+        "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/DataBus.Infrastructure.Persistance.csproj",
+        "packagesPath": "/Users/felipealpizarramirez/.nuget/packages/",
+        "outputPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/felipealpizarramirez/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj": {
+                "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj"
+              },
+              "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj": {
+                "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.28, )"
+            },
+            "Dapper.Oracle": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.2.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "ODP.NetCore": {
+              "target": "Package",
+              "version": "[2.0.12, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/DataBus.Infrastructure.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/DataBus.Infrastructure.Shared.csproj",
+        "projectName": "DataBus.Infrastructure.Shared",
+        "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/DataBus.Infrastructure.Shared.csproj",
+        "packagesPath": "/Users/felipealpizarramirez/.nuget/packages/",
+        "outputPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/felipealpizarramirez/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj": {
+                "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj"
+              },
+              "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj": {
+                "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.28, )"
+            },
+            "Dapper.Oracle": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.7.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Web/DataBus.Infrastructure.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Web/DataBus.Infrastructure.Web.csproj",
+        "projectName": "DataBus.Infrastructure.Web",
+        "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Web/DataBus.Infrastructure.Web.csproj",
+        "packagesPath": "/Users/felipealpizarramirez/.nuget/packages/",
+        "outputPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Web/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/felipealpizarramirez/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj": {
+                "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj"
+              },
+              "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj": {
+                "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Presentation/DataBus.WebApi/DataBus.WebApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Presentation/DataBus.WebApi/DataBus.WebApi.csproj",
+        "projectName": "DataBus.WebApi",
+        "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Presentation/DataBus.WebApi/DataBus.WebApi.csproj",
+        "packagesPath": "/Users/felipealpizarramirez/.nuget/packages/",
+        "outputPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Presentation/DataBus.WebApi/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/felipealpizarramirez/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "/usr/local/share/dotnet/sdk/7.0.311/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj": {
+                "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj"
+              },
+              "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/DataBus.Infrastructure.Persistance.csproj": {
+                "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/DataBus.Infrastructure.Persistance.csproj"
+              },
+              "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/DataBus.Infrastructure.Shared.csproj": {
+                "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/DataBus.Infrastructure.Shared.csproj"
+              },
+              "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Web/DataBus.Infrastructure.Web.csproj": {
+                "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Web/DataBus.Infrastructure.Web.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Asp.Versioning.Http": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "Asp.Versioning.Mvc": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "Asp.Versioning.Mvc.ApiExplorer": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.Extensions.Caching.Redis": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Serilog.Enrichers.Environment": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Serilog.Enrichers.Process": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
+            "Serilog.Enrichers.Thread": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Serilog.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Serilog.Extensions.Logging": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Serilog.Settings.Configuration": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Serilog.Sinks.Seq": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

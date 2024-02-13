@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Y9kHfa5wkOtgYtoc57BXW/snANFU+ngzSAM1avPoHks=",
+  "Source": "DataBus.WebApi",
+  "BasePath": "_content/DataBus.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

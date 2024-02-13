@@ -1,0 +1,12 @@
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/bin/Debug/net7.0/DataBus.Domain.deps.json
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/bin/Debug/net7.0/DataBus.Domain.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/bin/Debug/net7.0/DataBus.Domain.pdb
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/DataBus.Domain.csproj.AssemblyReference.cache
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/DataBus.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/DataBus.Domain.AssemblyInfoInputs.cache
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/DataBus.Domain.AssemblyInfo.cs
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/DataBus.Domain.csproj.CoreCompileInputs.cache
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/DataBus.Domain.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/refint/DataBus.Domain.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/DataBus.Domain.pdb
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/ref/DataBus.Domain.dll

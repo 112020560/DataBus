@@ -1,0 +1,15 @@
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/bin/Debug/net7.0/DataBus.Application.deps.json
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/bin/Debug/net7.0/DataBus.Application.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/bin/Debug/net7.0/DataBus.Application.pdb
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/bin/Debug/net7.0/DataBus.Domain.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/bin/Debug/net7.0/DataBus.Domain.pdb
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/obj/Debug/net7.0/DataBus.Application.csproj.AssemblyReference.cache
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/obj/Debug/net7.0/DataBus.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/obj/Debug/net7.0/DataBus.Application.AssemblyInfoInputs.cache
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/obj/Debug/net7.0/DataBus.Application.AssemblyInfo.cs
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/obj/Debug/net7.0/DataBus.Application.csproj.CoreCompileInputs.cache
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/obj/Debug/net7.0/DataBus.Application.csproj.CopyComplete
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/obj/Debug/net7.0/DataBus.Application.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/obj/Debug/net7.0/refint/DataBus.Application.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/obj/Debug/net7.0/DataBus.Application.pdb
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/obj/Debug/net7.0/ref/DataBus.Application.dll

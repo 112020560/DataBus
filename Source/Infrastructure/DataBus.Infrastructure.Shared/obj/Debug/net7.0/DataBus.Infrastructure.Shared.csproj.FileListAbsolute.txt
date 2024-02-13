@@ -1,0 +1,17 @@
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/bin/Debug/net7.0/DataBus.Infrastructure.Shared.deps.json
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/bin/Debug/net7.0/DataBus.Infrastructure.Shared.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/bin/Debug/net7.0/DataBus.Infrastructure.Shared.pdb
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/bin/Debug/net7.0/DataBus.Application.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/bin/Debug/net7.0/DataBus.Domain.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/bin/Debug/net7.0/DataBus.Domain.pdb
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/bin/Debug/net7.0/DataBus.Application.pdb
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/obj/Debug/net7.0/DataBus.Infrastructure.Shared.csproj.AssemblyReference.cache
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/obj/Debug/net7.0/DataBus.Infrastructure.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/obj/Debug/net7.0/DataBus.Infrastructure.Shared.AssemblyInfoInputs.cache
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/obj/Debug/net7.0/DataBus.Infrastructure.Shared.AssemblyInfo.cs
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/obj/Debug/net7.0/DataBus.Infrastructure.Shared.csproj.CoreCompileInputs.cache
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/obj/Debug/net7.0/DataBus.Infrastructure.Shared.csproj.CopyComplete
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/obj/Debug/net7.0/DataBus.Infrastructure.Shared.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/obj/Debug/net7.0/refint/DataBus.Infrastructure.Shared.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/obj/Debug/net7.0/DataBus.Infrastructure.Shared.pdb
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/obj/Debug/net7.0/ref/DataBus.Infrastructure.Shared.dll

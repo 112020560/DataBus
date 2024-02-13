@@ -1,0 +1,17 @@
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/bin/Debug/net7.0/DataBus.Infrastructure.Persistance.deps.json
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/bin/Debug/net7.0/DataBus.Infrastructure.Persistance.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/bin/Debug/net7.0/DataBus.Infrastructure.Persistance.pdb
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/bin/Debug/net7.0/DataBus.Application.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/bin/Debug/net7.0/DataBus.Domain.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/bin/Debug/net7.0/DataBus.Domain.pdb
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/bin/Debug/net7.0/DataBus.Application.pdb
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/obj/Debug/net7.0/DataBus.Infrastructure.Persistance.csproj.AssemblyReference.cache
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/obj/Debug/net7.0/DataBus.Infrastructure.Persistance.GeneratedMSBuildEditorConfig.editorconfig
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/obj/Debug/net7.0/DataBus.Infrastructure.Persistance.AssemblyInfoInputs.cache
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/obj/Debug/net7.0/DataBus.Infrastructure.Persistance.AssemblyInfo.cs
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/obj/Debug/net7.0/DataBus.Infrastructure.Persistance.csproj.CoreCompileInputs.cache
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/obj/Debug/net7.0/DataBus.Infrastructure.Persistance.csproj.CopyComplete
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/obj/Debug/net7.0/DataBus.Infrastructure.Persistance.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/obj/Debug/net7.0/refint/DataBus.Infrastructure.Persistance.dll
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/obj/Debug/net7.0/DataBus.Infrastructure.Persistance.pdb
+/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/obj/Debug/net7.0/ref/DataBus.Infrastructure.Persistance.dll
