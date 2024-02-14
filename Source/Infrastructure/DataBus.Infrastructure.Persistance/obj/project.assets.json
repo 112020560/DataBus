@@ -3062,36 +3062,35 @@
     ]
   },
   "packageFolders": {
-    "/Users/felipealpizarramirez/.nuget/packages/": {}
+    "/Users/home/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/DataBus.Infrastructure.Persistance.csproj",
+      "projectUniqueName": "/Users/home/Documents/GitHub/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/DataBus.Infrastructure.Persistance.csproj",
       "projectName": "DataBus.Infrastructure.Persistance",
-      "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/DataBus.Infrastructure.Persistance.csproj",
-      "packagesPath": "/Users/felipealpizarramirez/.nuget/packages/",
-      "outputPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/obj/",
+      "projectPath": "/Users/home/Documents/GitHub/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/DataBus.Infrastructure.Persistance.csproj",
+      "packagesPath": "/Users/home/.nuget/packages/",
+      "outputPath": "/Users/home/Documents/GitHub/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/felipealpizarramirez/.nuget/NuGet/NuGet.Config"
+        "/Users/home/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj": {
-              "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj"
+            "/Users/home/Documents/GitHub/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj": {
+              "projectPath": "/Users/home/Documents/GitHub/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj"
             },
-            "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj": {
-              "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj"
+            "/Users/home/Documents/GitHub/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj": {
+              "projectPath": "/Users/home/Documents/GitHub/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj"
             }
           }
         }
@@ -3100,6 +3099,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3159,8 +3163,20 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.200/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Data.SqlClient' 4.8.5 has a known high severity vulnerability, https://github.com/advisories/GHSA-98g6-xh36-x2p7",
+      "libraryId": "System.Data.SqlClient",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

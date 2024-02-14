@@ -10,3 +10,15 @@
 /Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/refint/DataBus.Domain.dll
 /Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/DataBus.Domain.pdb
 /Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/ref/DataBus.Domain.dll
+/Users/home/Documents/GitHub/DataBus/Source/Core/Domain/DataBus.Domain/bin/Debug/net7.0/DataBus.Domain.deps.json
+/Users/home/Documents/GitHub/DataBus/Source/Core/Domain/DataBus.Domain/bin/Debug/net7.0/DataBus.Domain.dll
+/Users/home/Documents/GitHub/DataBus/Source/Core/Domain/DataBus.Domain/bin/Debug/net7.0/DataBus.Domain.pdb
+/Users/home/Documents/GitHub/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/DataBus.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/home/Documents/GitHub/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/DataBus.Domain.AssemblyInfoInputs.cache
+/Users/home/Documents/GitHub/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/DataBus.Domain.AssemblyInfo.cs
+/Users/home/Documents/GitHub/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/DataBus.Domain.csproj.CoreCompileInputs.cache
+/Users/home/Documents/GitHub/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/DataBus.Domain.sourcelink.json
+/Users/home/Documents/GitHub/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/DataBus.Domain.dll
+/Users/home/Documents/GitHub/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/refint/DataBus.Domain.dll
+/Users/home/Documents/GitHub/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/DataBus.Domain.pdb
+/Users/home/Documents/GitHub/DataBus/Source/Core/Domain/DataBus.Domain/obj/Debug/net7.0/ref/DataBus.Domain.dll

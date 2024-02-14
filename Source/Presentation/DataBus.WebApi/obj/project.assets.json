@@ -9040,43 +9040,41 @@
     ]
   },
   "packageFolders": {
-    "/Users/felipealpizarramirez/.nuget/packages/": {}
+    "/Users/home/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Presentation/DataBus.WebApi/DataBus.WebApi.csproj",
+      "projectUniqueName": "/Users/home/Documents/GitHub/DataBus/Source/Presentation/DataBus.WebApi/DataBus.WebApi.csproj",
       "projectName": "DataBus.WebApi",
-      "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Presentation/DataBus.WebApi/DataBus.WebApi.csproj",
-      "packagesPath": "/Users/felipealpizarramirez/.nuget/packages/",
-      "outputPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Presentation/DataBus.WebApi/obj/",
+      "projectPath": "/Users/home/Documents/GitHub/DataBus/Source/Presentation/DataBus.WebApi/DataBus.WebApi.csproj",
+      "packagesPath": "/Users/home/.nuget/packages/",
+      "outputPath": "/Users/home/Documents/GitHub/DataBus/Source/Presentation/DataBus.WebApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/felipealpizarramirez/.nuget/NuGet/NuGet.Config"
+        "/Users/home/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
-        "/usr/local/share/dotnet/sdk/7.0.311/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj": {
-              "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj"
+            "/Users/home/Documents/GitHub/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj": {
+              "projectPath": "/Users/home/Documents/GitHub/DataBus/Source/Core/Application/DataBus.Application/DataBus.Application.csproj"
             },
-            "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/DataBus.Infrastructure.Persistance.csproj": {
-              "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/DataBus.Infrastructure.Persistance.csproj"
+            "/Users/home/Documents/GitHub/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/DataBus.Infrastructure.Persistance.csproj": {
+              "projectPath": "/Users/home/Documents/GitHub/DataBus/Source/Infrastructure/DataBus.Infrastructure.Persistance/DataBus.Infrastructure.Persistance.csproj"
             },
-            "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/DataBus.Infrastructure.Shared.csproj": {
-              "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/DataBus.Infrastructure.Shared.csproj"
+            "/Users/home/Documents/GitHub/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/DataBus.Infrastructure.Shared.csproj": {
+              "projectPath": "/Users/home/Documents/GitHub/DataBus/Source/Infrastructure/DataBus.Infrastructure.Shared/DataBus.Infrastructure.Shared.csproj"
             },
-            "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Web/DataBus.Infrastructure.Web.csproj": {
-              "projectPath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Infrastructure/DataBus.Infrastructure.Web/DataBus.Infrastructure.Web.csproj"
+            "/Users/home/Documents/GitHub/DataBus/Source/Infrastructure/DataBus.Infrastructure.Web/DataBus.Infrastructure.Web.csproj": {
+              "projectPath": "/Users/home/Documents/GitHub/DataBus/Source/Infrastructure/DataBus.Infrastructure.Web/DataBus.Infrastructure.Web.csproj"
             }
           }
         }
@@ -9085,6 +9083,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -9171,7 +9174,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.200/RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X2NRlIRVk3RFiXw6e0XK+OM6LMBp0KqRoIs7V367KVMC9MMP7JjaZH9kk8V4vHAH8YZIDzCKjn6T6ljmrK68NA==",
+  "dgSpecHash": "EmUDMh1/pWPAMz/zaznE4WFj+eW3G44ScCzeZ9y6KYrwwEP6VV3zBftsEJ4NPljYUOxfzlyyDtA/Gl1qYXASGQ==",
   "success": true,
-  "projectFilePath": "/Users/felipealpizarramirez/Desktop/Fuentes/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj",
+  "projectFilePath": "/Users/home/Documents/GitHub/DataBus/Source/Core/Domain/DataBus.Domain/DataBus.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
