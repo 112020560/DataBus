@@ -369,10 +369,3 @@ FodyWeavers.xsd
 
 # Mac Os
 .DS_Store
-/.idea
-access_control/.DS_Store
-/access_control/AccessControl.Application/obj/Debug
-/SharedKernel/obj
-/SharedKernel/obj/Debug
-/Source/Core/Application/DataBus.Application/bin/Debug/net7.0
-/Source/Core/Application/DataBus.Application/obj
