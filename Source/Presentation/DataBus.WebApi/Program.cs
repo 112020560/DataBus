@@ -83,6 +83,8 @@ app.UseHttpsRedirection();
 
 //BackendRutes v1
 app.UseBackendVersion1Routes(versionSet);
+//BackendRutes v2
+app.UseBackendVersion2Routes(versionSet);
 app.UseErrorHandler(logger);
 
 app.Run();

@@ -1,4 +1,5 @@
-﻿using DataBus.Application;
+using DataBus.Application;
+using DataBus.Domain;
 using DataBus.Infrastructure.Persistance;
 using DataBus.Infrastructure.Shared;
 using DataBus.Infrastructure.Web;
@@ -9,11 +10,31 @@ public static class InfrastructureExtension
 {
     public static void ConfigureInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
+        // Configurar conexiones desde config
+        services.Configure<DataConnectionsConfig>(configuration.GetSection("DataConnections"));
+
+        // Registrar providers
+        services.AddSingleton<IConnectionProvider, ConfigConnectionProvider>();
+        services.AddScoped<IHttpExecutor, HttpExecutor>();
+
+        // BD
         services.ConfigureDatabaseConnections();
         services.AddScoped<IDataBaseRepository, MssqlRepository>();
-        services.AddScoped<ICacheService,CacheService>();
-        services.AddHttpClient<ISandBoxRepository, SandBoxRepository>(config => {
-            config.BaseAddress = new Uri(configuration["ManagerSetting:BaseUrl"] ?? throw new Exception("No fue posible ontener la informacion del configurador del sandbox"));
-        });
+
+        // HTTP Client Factory
+        services.AddHttpClient();
+
+        // Cache
+        services.AddScoped<ICacheService, CacheService>();
+
+        // Sandbox (mantener para compatibilidad hacia atrás)
+        var sandboxBaseUrl = configuration["ManagerSetting:BaseUrl"];
+        if (!string.IsNullOrEmpty(sandboxBaseUrl))
+        {
+            services.AddHttpClient<ISandBoxRepository, SandBoxRepository>(config =>
+            {
+                config.BaseAddress = new Uri(sandboxBaseUrl);
+            });
+        }
     }
 }
