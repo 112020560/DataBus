@@ -23,18 +23,5 @@ public static class InfrastructureExtension
 
         // HTTP Client Factory
         services.AddHttpClient();
-
-        // Cache
-        services.AddScoped<ICacheService, CacheService>();
-
-        // Sandbox (mantener para compatibilidad hacia atrás)
-        var sandboxBaseUrl = configuration["ManagerSetting:BaseUrl"];
-        if (!string.IsNullOrEmpty(sandboxBaseUrl))
-        {
-            services.AddHttpClient<ISandBoxRepository, SandBoxRepository>(config =>
-            {
-                config.BaseAddress = new Uri(sandboxBaseUrl);
-            });
-        }
     }
 }

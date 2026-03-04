@@ -6,9 +6,7 @@ using Serilog;
 using DataBus.Application;
 
 var corsPolicy = "CORSPolicy";
-var version1 = new ApiVersion(1);
 var version2 = new ApiVersion(2);
-var version3 = new ApiVersion(3);
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -38,11 +36,6 @@ builder.Services.AddHttpLogging(options =>
 });
 
 // Add services to the container.
-builder.Services.AddDistributedRedisCache(o =>
-            {
-                o.Configuration = builder.Configuration["Redis:Cn"];
-            });
-
 builder.Services.ConfigureInfrastructure(builder.Configuration);
 builder.Services.ConfigureMediatr();
 
@@ -57,9 +50,7 @@ builder.Services.AddHealthChecks();
 var app = builder.Build();
 
 var versionSet = app.NewApiVersionSet()
-                    .HasApiVersion(version1)
                     .HasApiVersion(version2)
-                    .HasApiVersion(version3)
                     .ReportApiVersions()
                     .Build();
 
@@ -81,10 +72,8 @@ app.UseSwaggerUI(opts =>
 
 app.UseHttpsRedirection();
 
-//BackendRutes v1
-app.UseBackendVersion1Routes(versionSet);
-//BackendRutes v2
-app.UseBackendVersion2Routes(versionSet);
+//Backend Routes
+app.UseBackendRoutes(versionSet);
 app.UseErrorHandler(logger);
 
 app.Run();
