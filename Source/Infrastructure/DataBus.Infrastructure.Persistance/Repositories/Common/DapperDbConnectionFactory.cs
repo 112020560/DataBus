@@ -14,8 +14,7 @@ public class DapperDbConnectionFactory
 
     public IDbConnection CreateDbConnection(string connectionName)
     {
-        string? connectionString = null;
-        if (_connectionDict.TryGetValue(connectionName, out connectionString))
+        if (_connectionDict.TryGetValue(connectionName, out string? connectionString))
         {
             return new SqlConnection(connectionString);
         }

@@ -1,4 +1,4 @@
-﻿using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi.Models;
 
 namespace DataBus.WebApi;
 
@@ -17,13 +17,6 @@ public static class SwaggerExtension
 
         services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc("v1", new OpenApiInfo
-            {
-                Title = title,
-                Version = "v1",
-                Description = description,
-                Contact = contact
-            });
             c.SwaggerDoc("v2", new OpenApiInfo
             {
                 Title = title,
@@ -31,14 +24,6 @@ public static class SwaggerExtension
                 Description = description,
                 Contact = contact
             });
-            c.SwaggerDoc("v3", new OpenApiInfo
-            {
-                Title = title,
-                Version = "v3",
-                Description = description,
-                Contact = contact
-            });
         });
-
     }
 }

@@ -19,7 +19,7 @@ public static class InfrastructureExtension
 
         // BD
         services.ConfigureDatabaseConnections();
-        services.AddScoped<IDataBaseRepository, MssqlRepository>();
+        services.AddScoped<IDataBaseRepository, DatabaseRepository>();
 
         // HTTP Client Factory
         services.AddHttpClient();

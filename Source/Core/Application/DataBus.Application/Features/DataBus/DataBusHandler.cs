@@ -5,7 +5,12 @@ using Microsoft.Extensions.Logging;
 
 namespace DataBus.Application;
 
-public record DataBusQuery(DataBusRequest Request) : IRequest<IBackendResponse>;
+/// <summary>
+/// Query para ejecutar operaciones en base de datos o HTTP
+/// </summary>
+/// <param name="Request">El request con los datos</param>
+/// <param name="ExecutionMethod">Método de ejecución: query, single, scalar, execute</param>
+public record DataBusQuery(DataBusRequest Request, string ExecutionMethod = "query") : IRequest<IBackendResponse>;
 
 public class DataBusHandler : IRequestHandler<DataBusQuery, IBackendResponse>
 {
@@ -29,18 +34,19 @@ public class DataBusHandler : IRequestHandler<DataBusQuery, IBackendResponse>
     public async Task<IBackendResponse> Handle(DataBusQuery query, CancellationToken cancellationToken)
     {
         var request = query.Request;
+        var method = query.ExecutionMethod.ToLower();
 
         // Obtener configuración de conexión
         var connection = _connectionProvider.GetConnection(request.Key)
             ?? throw new NotFoundException($"Conexión no encontrada: {request.Key}");
 
-        _logger.LogDebug("[{TransactionId}] Tipo: {Type}, Key: {Key}",
-            request.TransactionId, connection.Type, request.Key);
+        _logger.LogDebug("[{TransactionId}] Tipo: {Type}, Key: {Key}, Method: {Method}",
+            request.TransactionId, connection.Type, request.Key, method);
 
         object? result = connection.Type.ToUpper() switch
         {
             "HTTP" => await ExecuteHttpAsync(request, connection, cancellationToken),
-            _ => await ExecuteDatabaseAsync(request, connection, cancellationToken)
+            _ => await ExecuteDatabaseAsync(request, connection, method, cancellationToken)
         };
 
         return new BackEndResponse
@@ -72,12 +78,27 @@ public class DataBusHandler : IRequestHandler<DataBusQuery, IBackendResponse>
         return await _httpExecutor.ExecuteAsync(model, cancellationToken);
     }
 
-    private async Task<IEnumerable<object>> ExecuteDatabaseAsync(
+    private async Task<object?> ExecuteDatabaseAsync(
         DataBusRequest request,
         ConnectionConfig connection,
+        string method,
         CancellationToken cancellationToken)
     {
-        var model = new ExecutionMoldel
+        var model = CreateExecutionModel(request, connection);
+
+        return method switch
+        {
+            "query" => await _dbRepository.QueryAsync<dynamic>(model),
+            "single" => await _dbRepository.QuerySingleAsync<dynamic>(model),
+            "scalar" => await _dbRepository.ScalarAsync<dynamic>(model),
+            "execute" => await _dbRepository.ExecuteAsync(model),
+            _ => throw new ArgumentException($"Método de ejecución no válido: {method}. Use: query, single, scalar, execute")
+        };
+    }
+
+    private static ExecutionMoldel CreateExecutionModel(DataBusRequest request, ConnectionConfig connection)
+    {
+        return new ExecutionMoldel
         {
             ConnString = connection.ConnectionString,
             Query = request.Procedure,
@@ -93,11 +114,9 @@ public class DataBusHandler : IRequestHandler<DataBusQuery, IBackendResponse>
             ExecutionTimeOut = connection.TimeoutSeconds,
             CorrelationId = request.TransactionId
         };
-
-        return await _dbRepository.GetExecutionAsync<object>(model);
     }
 
-    private Dictionary<string, string> MergeHeaders(
+    private static Dictionary<string, string> MergeHeaders(
         Dictionary<string, string>? configHeaders,
         Dictionary<string, string>? requestHeaders)
     {
