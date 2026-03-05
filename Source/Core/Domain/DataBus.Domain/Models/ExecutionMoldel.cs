@@ -16,6 +16,7 @@ public record class ExecutionMoldel
     public string CorrelationId { get; set; } = Guid.NewGuid().ToString("N");
     public string DataBaseTarget { get; set; } = "MSSQL";
     public bool ExistOutputParameters { get; set; }
+    public bool IsTextCommand { get; set; } = false;  // true = CommandType.Text, false = StoredProcedure
 
     public bool ValidateExistOutputParams()
     {

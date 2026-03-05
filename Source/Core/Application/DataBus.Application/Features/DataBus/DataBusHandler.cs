@@ -1,3 +1,4 @@
+using System.Text.Json;
 using DataBus.Application.Exceptions;
 using DataBus.Domain;
 using MediatR;
@@ -9,7 +10,7 @@ namespace DataBus.Application;
 /// Query para ejecutar operaciones en base de datos o HTTP
 /// </summary>
 /// <param name="Request">El request con los datos</param>
-/// <param name="ExecutionMethod">Método de ejecución: query, single, scalar, execute</param>
+/// <param name="ExecutionMethod">Método de ejecución: query, single, scalar, execute, text</param>
 public record DataBusQuery(DataBusRequest Request, string ExecutionMethod = "query") : IRequest<IBackendResponse>;
 
 public class DataBusHandler : IRequestHandler<DataBusQuery, IBackendResponse>
@@ -46,7 +47,7 @@ public class DataBusHandler : IRequestHandler<DataBusQuery, IBackendResponse>
         object? result = connection.Type.ToUpper() switch
         {
             "HTTP" => await ExecuteHttpAsync(request, connection, cancellationToken),
-            _ => await ExecuteDatabaseAsync(request, connection, method, cancellationToken)
+            _ => await ExecuteDatabaseAsync(request, connection, method)
         };
 
         return new BackEndResponse
@@ -69,8 +70,8 @@ public class DataBusHandler : IRequestHandler<DataBusQuery, IBackendResponse>
             Endpoint = request.Procedure,
             Method = request.Method ?? "POST",
             Headers = MergeHeaders(connection.Headers, request.Headers),
-            Body = request.Params?.ToDictionary(p => p.Name, p => p.Value),
-            QueryParams = request.QueryParams?.ToDictionary(p => p.Name, p => p.Value?.ToString() ?? ""),
+            Body = request.Params?.ToDictionary(p => p.Name, p => ConvertJsonElement(p.Value)),
+            QueryParams = request.QueryParams?.ToDictionary(p => p.Name, p => ConvertJsonElement(p.Value)?.ToString() ?? ""),
             TimeoutSeconds = connection.TimeoutSeconds,
             CorrelationId = request.TransactionId
         };
@@ -81,38 +82,66 @@ public class DataBusHandler : IRequestHandler<DataBusQuery, IBackendResponse>
     private async Task<object?> ExecuteDatabaseAsync(
         DataBusRequest request,
         ConnectionConfig connection,
-        string method,
-        CancellationToken cancellationToken)
+        string method)
     {
-        var model = CreateExecutionModel(request, connection);
+        // "text" usa CommandType.Text, los demás usan StoredProcedure
+        var isTextCommand = method == "text";
+        var model = CreateExecutionModel(request, connection, isTextCommand);
 
         return method switch
         {
             "query" => await _dbRepository.QueryAsync<dynamic>(model),
+            "text" => await _dbRepository.QueryAsync<dynamic>(model),  // SQL directo, retorna filas
             "single" => await _dbRepository.QuerySingleAsync<dynamic>(model),
             "scalar" => await _dbRepository.ScalarAsync<dynamic>(model),
             "execute" => await _dbRepository.ExecuteAsync(model),
-            _ => throw new ArgumentException($"Método de ejecución no válido: {method}. Use: query, single, scalar, execute")
+            _ => throw new ArgumentException($"Método de ejecución no válido: {method}. Use: query, single, scalar, execute, text")
         };
     }
 
-    private static ExecutionMoldel CreateExecutionModel(DataBusRequest request, ConnectionConfig connection)
+    private static ExecutionMoldel CreateExecutionModel(DataBusRequest request, ConnectionConfig connection, bool isTextCommand = false)
     {
         return new ExecutionMoldel
         {
             ConnString = connection.ConnectionString,
             Query = request.Procedure,
             DataBaseTarget = connection.Type.ToUpper(),
+            IsTextCommand = isTextCommand,
             Params = request.Params?.Select(p => new ParameterModel
             {
                 ParameterName = p.Name,
-                ParameterValue = p.Value,
+                ParameterValue = ConvertJsonElement(p.Value),
                 Type = p.Type,
                 Direction = p.Direction ?? "IN",
                 Size = p.Size
             }).ToList(),
             ExecutionTimeOut = connection.TimeoutSeconds,
             CorrelationId = request.TransactionId
+        };
+    }
+
+    /// <summary>
+    /// Convierte JsonElement a tipos nativos de .NET
+    /// System.Text.Json deserializa object? como JsonElement, no como el tipo primitivo
+    /// </summary>
+    private static object? ConvertJsonElement(object? value)
+    {
+        if (value is null)
+            return null;
+
+        if (value is not JsonElement element)
+            return value;
+
+        return element.ValueKind switch
+        {
+            JsonValueKind.String => element.GetString(),
+            JsonValueKind.Number => element.TryGetInt64(out var l) ? l : element.GetDouble(),
+            JsonValueKind.True => true,
+            JsonValueKind.False => false,
+            JsonValueKind.Null => null,
+            JsonValueKind.Array => element.EnumerateArray().Select(e => ConvertJsonElement(e)).ToList(),
+            JsonValueKind.Object => element.ToString(),
+            _ => element.ToString()
         };
     }
 

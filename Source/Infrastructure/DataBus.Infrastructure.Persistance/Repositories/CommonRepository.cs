@@ -93,14 +93,18 @@ public abstract class CommonRepository
                     //var valor = parametrList.ParameterValue;
                     if (string.IsNullOrEmpty(parametrList.ParameterName)) throw new Exception("Property [ParameterName] is null");
                     var paramName = @internal.Flag == 1 ? $"P_{parametrList.ParameterName.ToUpper(new CultureInfo("en-US"))}" : parametrList.ParameterName.ToUpper(new CultureInfo("en-US"));
-                    var type = parametrList.ParameterValue?.GetType();
-                    var paramType = GetDataTypeAsyn(type);
-                    pararameters.Add(paramName, parametrList.ParameterValue, paramType, direction);
+                    // Usar tipo declarado para OUT params, o inferir del valor
+                    var paramType = !string.IsNullOrEmpty(parametrList.Type)
+                        ? GetDbTypeFromDeclaredType(parametrList.Type)
+                        : GetDataTypeAsyn(parametrList.ParameterValue?.GetType());
+                    // Para parámetros OUT de tipo String, se requiere un Size > 0
+                    var size = GetParameterSize(parametrList, direction, paramType);
+                    pararameters.Add(paramName, parametrList.ParameterValue, paramType, direction, size);
 
                     ///Si se habilita el log al SP, este loguea el query
                     if (@internal.EnableLog)
                     {
-                        strparametros = CreateParatemerLogs(strparametros, paramName, type, parametrList.ParameterValue);
+                        strparametros = CreateParatemerLogs(strparametros, paramName, parametrList.ParameterValue?.GetType(), parametrList.ParameterValue);
                         _logger.LogInformation("[{TransactionId}] - Ejecucion a Base de Datos:  EXEC {Procedimiento} {strparametros}", @internal.CorrelationId, @internal.Query, strparametros);
                     }
                 }
@@ -141,11 +145,13 @@ public abstract class CommonRepository
                     }
                     if (string.IsNullOrEmpty(param.ParameterName)) throw new Exception("La propiedad param.ParameterName esta nula");
                     var paramName = @internal.Flag == 1 ? $"P_{param.ParameterName.ToUpper(new CultureInfo("en-US"))}" : param.ParameterName.ToUpper(new CultureInfo("en-US"));
-                    //var valor = param.ParameterValue;
-                    var type = param.ParameterValue?.GetType();
-                    var paramsType = GetDataTypeAsyn(type);
-                    //Agregamos el parametro
-                    pararameters.Add(paramName, param.ParameterValue, paramsType, direction);
+                    // Usar tipo declarado para OUT params, o inferir del valor
+                    var paramType = !string.IsNullOrEmpty(param.Type)
+                        ? GetDbTypeFromDeclaredType(param.Type)
+                        : GetDataTypeAsyn(param.ParameterValue?.GetType());
+                    // Para parámetros OUT de tipo String, se requiere un Size > 0
+                    var size = GetParameterSize(param, direction, paramType);
+                    pararameters.Add(paramName, param.ParameterValue, paramType, direction, size);
                 }
             }
             return pararameters;
@@ -213,9 +219,49 @@ public abstract class CommonRepository
         }
         return responseObject;
     }
+    /// <summary>
+    /// Determina el tamaño del parámetro. Para OUTPUT de tipo String, se requiere Size > 0
+    /// </summary>
+    private static int? GetParameterSize(ParameterModel param, ParameterDirection direction, DbType dbType)
+    {
+        // Si el parámetro ya tiene un size definido, usarlo
+        if (param.Size > 0)
+            return param.Size;
+
+        // Para parámetros de salida de tipo String, establecer un tamaño por defecto
+        if (direction != ParameterDirection.Input && dbType == DbType.String)
+            return 4000; // Tamaño por defecto para strings de salida
+
+        // Para parámetros de entrada, no es necesario especificar size
+        return null;
+    }
+
+    /// <summary>
+    /// Obtiene el DbType basado en el tipo declarado del parámetro (string) o el tipo del valor
+    /// </summary>
+    private static DbType GetDbTypeFromDeclaredType(string? declaredType)
+    {
+        if (string.IsNullOrEmpty(declaredType))
+            return DbType.String;
+
+        return declaredType.ToUpper() switch
+        {
+            "INT" or "INT32" or "INTEGER" => DbType.Int32,
+            "INT16" or "SMALLINT" => DbType.Int16,
+            "INT64" or "BIGINT" or "LONG" => DbType.Int64,
+            "STRING" or "VARCHAR" or "NVARCHAR" or "TEXT" => DbType.String,
+            "DECIMAL" or "MONEY" => DbType.Decimal,
+            "DOUBLE" or "FLOAT" => DbType.Double,
+            "BOOLEAN" or "BOOL" or "BIT" => DbType.Boolean,
+            "DATETIME" or "DATE" => DbType.DateTime,
+            "GUID" or "UNIQUEIDENTIFIER" => DbType.Guid,
+            _ => DbType.String
+        };
+    }
+
     private static DbType GetDataTypeAsyn(Type? type)
     {
-        if (type == null) return default;
+        if (type == null) return DbType.String;
 
         switch (type.Name.ToUpper(new CultureInfo("en-US", false)))
         {

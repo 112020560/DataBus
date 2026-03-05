@@ -8,59 +8,48 @@ namespace DataBus.WebApi;
 
 public static class BackendRouter
 {
+    private static readonly string[] ValidMethods = { "query", "single", "scalar", "execute", "text" };
+
     public static void UseBackendRoutes(this WebApplication app, ApiVersionSet apiVersionSet)
     {
-        // Ruta con método de ejecución: /api/v2/query/execute, /api/v2/single/execute, etc.
-        app.MapPost("api/v{version:apiVersion}/{method}/execute", ExecuteWithMethodAsync)
+        // POST /api/v2/{method}
+        // method: query | single | scalar | execute
+        app.MapPost("api/v{version:apiVersion}/{method}", ExecuteAsync)
            .WithApiVersionSet(apiVersionSet)
            .MapToApiVersion(new Asp.Versioning.ApiVersion(2));
 
-        app.MapPost("api/{version:apiVersion}/{method}/execute", ExecuteWithMethodAsync)
-           .WithApiVersionSet(apiVersionSet)
-           .MapToApiVersion(new Asp.Versioning.ApiVersion(2));
-
-        // Ruta simple (usa "query" por defecto)
-        app.MapPost("api/v{version:apiVersion}/execute", ExecuteAsync)
-           .WithApiVersionSet(apiVersionSet)
-           .MapToApiVersion(new Asp.Versioning.ApiVersion(2));
-
-        app.MapPost("api/{version:apiVersion}/execute", ExecuteAsync)
+        app.MapPost("api/{version:apiVersion}/{method}", ExecuteAsync)
            .WithApiVersionSet(apiVersionSet)
            .MapToApiVersion(new Asp.Versioning.ApiVersion(2));
     }
 
     /// <summary>
-    /// Ejecuta con método específico desde URL
-    /// POST /api/v2/query/execute   → QueryAsync (múltiples filas)
-    /// POST /api/v2/single/execute  → QuerySingleAsync (una fila)
-    /// POST /api/v2/scalar/execute  → ScalarAsync (un valor)
-    /// POST /api/v2/execute/execute → ExecuteAsync (sin retorno, solo affected rows + output params)
+    /// Ejecuta una operación en base de datos o HTTP externo
+    ///
+    /// POST /api/v2/query   → QueryAsync (múltiples filas) - StoredProcedure
+    /// POST /api/v2/single  → QuerySingleAsync (una fila) - StoredProcedure
+    /// POST /api/v2/scalar  → ScalarAsync (un valor) - StoredProcedure
+    /// POST /api/v2/execute → ExecuteAsync (INSERT/UPDATE/DELETE) - StoredProcedure
+    /// POST /api/v2/text    → QueryAsync (múltiples filas) - SQL directo (CommandType.Text)
     /// </summary>
-    static async Task<IResult> ExecuteWithMethodAsync(
+    static async Task<IResult> ExecuteAsync(
         IMediator mediator,
         [FromRoute] string method,
         DataBusRequest request)
     {
-        var validMethods = new[] { "query", "single", "scalar", "execute" };
         var normalizedMethod = method.ToLower();
 
-        if (!validMethods.Contains(normalizedMethod))
+        if (!ValidMethods.Contains(normalizedMethod))
         {
-            return Results.BadRequest(new
+            return Results.BadRequest(new BackEndResponse
             {
-                Error = $"Método '{method}' no válido. Use: query, single, scalar, execute"
+                ResponseCode = "400",
+                ResponseData = null,
+                Message = $"Método '{method}' no válido",
+                ErrorMessage = $"Use uno de: {string.Join(", ", ValidMethods)}"
             });
         }
 
         return Results.Ok(await mediator.Send(new DataBusQuery(request, normalizedMethod)));
-    }
-
-    /// <summary>
-    /// Ejecuta con método "query" por defecto
-    /// POST /api/v2/execute
-    /// </summary>
-    static async Task<IResult> ExecuteAsync(IMediator mediator, DataBusRequest request)
-    {
-        return Results.Ok(await mediator.Send(new DataBusQuery(request, "query")));
     }
 }
