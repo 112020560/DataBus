@@ -13,6 +13,9 @@ public static class InfrastructureExtension
         // Configurar conexiones desde config
         services.Configure<DataConnectionsConfig>(configuration.GetSection("DataConnections"));
 
+        // Registrar servicios de encriptación
+        services.AddSingleton<IDecryptService, DecryptService>();
+
         // Registrar providers
         services.AddSingleton<IConnectionProvider, ConfigConnectionProvider>();
         services.AddScoped<IHttpExecutor, HttpExecutor>();

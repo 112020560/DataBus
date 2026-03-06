@@ -37,8 +37,8 @@ public class DataBusHandler : IRequestHandler<DataBusQuery, IBackendResponse>
         var request = query.Request;
         var method = query.ExecutionMethod.ToLower();
 
-        // Obtener configuración de conexión
-        var connection = _connectionProvider.GetConnection(request.Key)
+        // Obtener configuración de conexión (desencripta automáticamente si IsEncrypted=true)
+        var connection = await _connectionProvider.GetConnectionAsync(request.Key, cancellationToken)
             ?? throw new NotFoundException($"Conexión no encontrada: {request.Key}");
 
         _logger.LogDebug("[{TransactionId}] Tipo: {Type}, Key: {Key}, Method: {Method}",

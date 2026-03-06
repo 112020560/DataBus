@@ -4,6 +4,11 @@ namespace DataBus.Application;
 
 public interface IConnectionProvider
 {
-    ConnectionConfig? GetConnection(string key);
+    /// <summary>
+    /// Obtiene la configuración de conexión por su llave.
+    /// Si IsEncrypted=true, desencripta el ConnectionString automáticamente.
+    /// </summary>
+    Task<ConnectionConfig?> GetConnectionAsync(string key, CancellationToken cancellationToken = default);
+
     bool ConnectionExists(string key);
 }

@@ -200,16 +200,16 @@ public abstract class CommonRepository
         foreach (var param in parameters.ParameterNames)
         {
             //if (parameters.ParameterNames.Any(a => param.Parametro.ToUpper().Contains(a.ToUpper())))
-            if (parameterModels != null && parameterModels.Any(a => a.ParameterName != null && a.ParameterName.ToUpper().Equals(param.ToUpper())))
+            if (parameterModels != null && parameterModels.Any(a => a.ParameterName != null && a.ParameterName.ToUpper().Replace("@","").Equals(param.ToUpper())))
             {
-                var configParameter = parameterModels.Where(a => a.ParameterName != null && a.ParameterName.ToUpper().Equals(param.ToUpper())).First();
+                var configParameter = parameterModels.Where(a => a.ParameterName != null && a.ParameterName.ToUpper().Replace("@","").Equals(param.ToUpper())).First();
 
                 //if ((param.Direction != null && param.Direction.ToUpper(new CultureInfo("en-US")) == "OUT") || (param.Parametro.ToUpper().Contains("PK_")) || (param.Parametro.ToUpper().Contains("OUT_")))
                 if ((configParameter.Direction != null && configParameter.Direction.ToUpper(new CultureInfo("en-US")) == "OUT")
                 || (configParameter.ParameterName != null && configParameter.ParameterName.ToUpper().Contains("PK_"))
                 || (configParameter.ParameterName != null && configParameter.ParameterName.ToUpper().Contains("OUT_")))
                 {
-                    responseObject.Add(configParameter.ParameterName ?? "Param", parameters.Get<object>(param));
+                    responseObject.Add(configParameter?.ParameterName?.Replace("@","") ?? "Param", parameters.Get<object>(param));
                 }
             }
         }
