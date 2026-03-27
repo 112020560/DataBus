@@ -1,5 +1,6 @@
 using Asp.Versioning;
 using DataBus.WebApi;
+using DataBus.Observability;
 using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.Net.Http.Headers;
 using Serilog;
@@ -15,6 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 var logger = new LoggerConfiguration()
   .ReadFrom.Configuration(builder.Configuration)
   .Enrich.FromLogContext()
+  .Enrich.WithTraceContext()
   .CreateLogger();
 
 logger.Information($"Environmet : {Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}");
@@ -39,6 +41,9 @@ builder.Services.AddHttpLogging(options =>
 builder.Services.ConfigureInfrastructure(builder.Configuration);
 builder.Services.ConfigureMediatr();
 
+// Add Observability (OpenTelemetry)
+builder.Services.AddObservability(builder.Configuration);
+
 builder.Services.ConfigureCorsPolicy(corsPolicy);
 builder.Services.ConfiguVersioningApi();
 
@@ -56,6 +61,9 @@ var versionSet = app.NewApiVersionSet()
 
 app.UseSerilogRequestLogging();
 app.UseHttpLogging();
+
+// Use observability (exposes /metrics for Prometheus)
+app.UseObservability();
 
 // Configure the HTTP request pipeline.
 app.UseSwagger();
